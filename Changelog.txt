@@ -1,0 +1,26 @@
+Sécurité
+	- Hash salt + md5 du mot de passe en BDD
+
+BDD
+	- comediens.saison -> 'Actif'
+	- comediens.jour + mois + année -> 'DateDeNaissance'
+	- comddiens.motdepasse : hashshage salt + md5
+
+Code
+	- Abandon des methodes obsoletes mysql pour PDO
+	- Passage en POO
+
+Ecran Login
+	- Ecran de login full page
+
+
+
+//TODEBUG : fix css du login / mdp si name = login dans mot de passe ça marche sinon ça merde
+
+//TODO : ajouter anniversaires dans liste évenements à venir en interne
+
+//TODO : Renvoi mot de passe oublié
+//TODO : lien Retour au site public sur identification
+//TODO : //CSS : hover mot de passe oublié
+//TODO : //CSS : background checkbox
+//TODO : .htaccess

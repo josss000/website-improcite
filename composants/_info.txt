@@ -1,0 +1,8 @@
+Composants utilisés dans le site
+-> permet de savoir ce qui est utilisé, dans quelle version
+-> contient du coup les exemples, la doc, l'url, les sources
+
+Bootstrap : Framework	
+Font Awesome: Librairie d’icônes
+Paper Dashboard : Theme gratuit pour panneau d’admin
+Full page sign in : login bootsnip : http://bootsnipp.com/snippets/dPKk
