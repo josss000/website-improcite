@@ -142,58 +142,39 @@ if ($page_en_cours <> 'identification.php')
 
 <?php
 
-//		array('page' => 'index.php', 'icone' => 'ti-home')
+		$menu = []; 
+		$menu[1] = array('page' => 'index.php', 'icone' => 'ti-home', 'libelle' => 'Accueil');
+		$menu[2] = array('page' => 'profil.php', 'icone' => 'ti-user', 'libelle' => 'Mon Profil');
+		$menu[3] = array('page' => 'membres.php', 'icone' => 'fa fa-users', 'libelle' => 'La troupe');
+		$menu[4] = array('page' => 'recrutement.php', 'icone' => 'fa fa-user-plus', 'libelle' => 'Recrutement');
+		$menu[5] = array('page' => 'reservations.php', 'icone' => 'ti-ticket', 'libelle' => 'Réservations');
+		$menu[6] = array('page' => 'disponibilites.php', 'icone' => 'ti-calendar', 'libelle' => 'Disponibilités');
+		$menu[7] = array('page' => 'statistiques.php', 'icone' => 'ti-stats-up', 'libelle' => 'Statistiques');
+		$menu[8] = array('page' => 'fichiers.php', 'icone' => 'ti-files', 'libelle' => 'Fichiers');
+
+		$titre = "";
+
+		foreach ($menu as $entree) {
+			
+			$active = "";
+			if ($page_en_cours == $entree['page'])
+			{
+				$active = " class='active'";
+				$titre = $entree['libelle'];
+			}
+
+
+
+			echo "<li".$active.">\n";
+			echo "<a href='".$entree['page']."''>\n";  //class="active"
+			echo "<i class='".$entree['icone']."''></i>\n";
+			echo "<p>".$entree['libelle']."</p>\n";
+     		echo "</a>\n</li>\n";
+
+		}
 
 
 ?>
-
-                <li>
-                    <a href="index.php">
-                        <i class="ti-home"></i>
-                        <p>Accueil</p>
-                    </a>
-                </li>
-                <li class="profil.php">
-                    <a href="user.html">
-                        <i class="ti-user"></i>
-                        <p>Mon Profil</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="membres.php">
-                        <i class="fa fa-users"></i>
-                        <p>La troupe</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="recrutement.php">
-                        <i class="fa fa-user-plus"></i>
-                        <p>Recrutement</p>
-                    </a>
-                </li>                <li>
-                    <a href="reservations.php">
-                        <i class="ti-ticket"></i>
-                        <p>Réservations</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="disponibilites.php">
-                        <i class="ti-calendar"></i>
-                        <p>Disponibilités</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="statistiques.php">
-                        <i class="ti-stats-up"></i>
-                        <p>Statistiques</p>
-                    </a>
-                </li>
-				<li>
-                    <a href="fichiers.php">
-                        <i class="ti-files"></i>
-                        <p>Fichiers</p>
-                    </a>
-                </li>
 
             </ul>
     	</div>
@@ -209,7 +190,13 @@ if ($page_en_cours <> 'identification.php')
                         <span class="icon-bar bar2"></span>
                         <span class="icon-bar bar3"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Mon profil</a>
+                    <a class="navbar-brand" href="#">
+
+<?php
+ 	echo $titre;
+ 	?>
+
+                    </a>
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
