@@ -133,59 +133,108 @@ if ($page_en_cours <> 'identification.php')
 
     	<div class="sidebar-wrapper">
             <div class="logo">
-                <a href="http://www.creative-tim.com" class="simple-text">
-                    Creative Tim
+                <a href="http://www.improcite.com" class="simple-text">
+                    IMPROCITE
                 </a>
             </div>
 
             <ul class="nav">
+
+<?php
+
+//		array('page' => 'index.php', 'icone' => 'ti-home')
+
+
+?>
+
                 <li>
-                    <a href="dashboard.html">
-                        <i class="ti-panel"></i>
-                        <p>Dashboard</p>
+                    <a href="index.php">
+                        <i class="ti-home"></i>
+                        <p>Accueil</p>
                     </a>
                 </li>
-                <li class="active">
+                <li class="profil.php">
                     <a href="user.html">
                         <i class="ti-user"></i>
-                        <p>User Profile</p>
+                        <p>Mon Profil</p>
                     </a>
                 </li>
                 <li>
-                    <a href="table.html">
-                        <i class="ti-view-list-alt"></i>
-                        <p>Table List</p>
+                    <a href="membres.php">
+                        <i class="fa fa-users"></i>
+                        <p>La troupe</p>
                     </a>
                 </li>
                 <li>
-                    <a href="typography.html">
-                        <i class="ti-text"></i>
-                        <p>Typography</p>
+                    <a href="recrutement.php">
+                        <i class="fa fa-user-plus"></i>
+                        <p>Recrutement</p>
+                    </a>
+                </li>                <li>
+                    <a href="reservations.php">
+                        <i class="ti-ticket"></i>
+                        <p>Réservations</p>
                     </a>
                 </li>
                 <li>
-                    <a href="icons.html">
-                        <i class="ti-pencil-alt2"></i>
-                        <p>Icons</p>
+                    <a href="disponibilites.php">
+                        <i class="ti-calendar"></i>
+                        <p>Disponibilités</p>
                     </a>
                 </li>
                 <li>
-                    <a href="maps.html">
-                        <i class="ti-map"></i>
-                        <p>Maps</p>
+                    <a href="statistiques.php">
+                        <i class="ti-stats-up"></i>
+                        <p>Statistiques</p>
                     </a>
                 </li>
-                <li>
-                    <a href="notifications.html">
-                        <i class="ti-bell"></i>
-                        <p>Notifications</p>
+				<li>
+                    <a href="fichiers.php">
+                        <i class="ti-files"></i>
+                        <p>Fichiers</p>
                     </a>
                 </li>
+
             </ul>
     	</div>
     </div>
 
     <div class="main-panel">
+    <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar bar1"></span>
+                        <span class="icon-bar bar2"></span>
+                        <span class="icon-bar bar3"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Mon profil</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="ti-panel"></i>
+									<p>Admin</p>
+									<b class="caret"></b>
+                              </a>
+                              <ul class="dropdown-menu">
+                                <li><a href="#">Configuration</a></li>
+                                <li><a href="#">Carrousel</a></li>
+                              </ul>
+                        </li>
+						<li>
+                            <a href="dbg_session_destroy.php">
+								<i class="ti-power-off"></i>
+								<p>Sortir</p>
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
 <?php
 }
 ?>
