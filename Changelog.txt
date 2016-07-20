@@ -24,3 +24,6 @@ Ecran Login
 //TODO : //CSS : hover mot de passe oublié
 //TODO : //CSS : background checkbox
 //TODO : .htaccess
+
+
+//TODO : changer les évènements avec la date + saison en cours = date début saison

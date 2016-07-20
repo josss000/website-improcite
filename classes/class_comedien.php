@@ -12,6 +12,7 @@ class comedien
 	private $_email;
 	private $_portable;
 	private $_adresse;
+	private $_phraseImpro;
 	private $_qualite;
 	private $_defaut;
 	private $_debut;
@@ -52,10 +53,12 @@ class comedien
 	public function getMotDePasse () { return $this->_motdepasse; }
 	public function getSurnom () { return $this->_surnom; }
 	public function getPrenom () { return $this->_prenom; }
+	public function getNom () { return $this->_nom; }
 	public function getDateDeNaissance () { return $this->_date_naissance; }
 	public function getEmail () { return $this->_email; }
 	public function getPortable () { return $this->_portable; }
 	public function getAdresse () { return $this->_adresse; }
+	public function getPhraseImpro () { return $this->_phraseImpro; }
 	public function getQualite () { return $this->_qualite; }
 	public function getDefaut () { return $this->_defaut; }
 	public function getDebut () { return $this->_debut; }
@@ -75,10 +78,12 @@ class comedien
 	public function setMotDePasse ($motdepasse) { $this->_motdepasse = $motdepasse; }
 	public function setSurnom ($surnom) { $this->_surnom = $surnom; }
 	public function setPrenom ($prenom) { $this->_prenom = $prenom; }
+	public function setNom ($nom) { $this->_nom = $nom; }
 	public function setDateDeNaissance ($date_naissance) { $this->_date_naissance = $date_naissance; }
 	public function setEmail ($email) { $this->_email = $email; }
 	public function setPortable ($portable) { $this->_portable = $portable; }
 	public function setAdresse ($adresse) { $this->_adresse = $adresse; }
+	public function setPhraseImpro ($phraseImpro) { $this->_phraseImpro = $phraseImpro; }
 	public function setQualite ($qualite) { $this->_qualite = $qualite; }
 	public function setDefaut ($defaut) { $this->_defaut = $defaut; }
 	public function setDebut ($debut) { $this->_debut = $debut; }

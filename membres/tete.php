@@ -222,6 +222,8 @@ if ($page_en_cours <> 'identification.php')
                 </div>
             </div>
         </nav>
+    <div class="content">
+        <div class="container-fluid">
 <?php
 }
 ?>

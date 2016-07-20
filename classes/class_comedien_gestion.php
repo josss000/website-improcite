@@ -28,12 +28,12 @@ class comedien_gestion
 
   public function getComedienById($id)
   {
-    // Exécute une requête de type SELECT avec une clause WHERE, et retourne un objet Comedien.
 	  $id = (int) $id;
 
-    $requete = $this->_db->prepare('SELECT * FROM impro_comediens WHERE id = ?');
+    // Exécute une requête de type SELECT avec une clause WHERE, et retourne un objet Comedien.
+    $requete = $this->_db->prepare("SELECT * FROM impro_comediens WHERE id = ?");
 	  $requete->execute(array($id));
-    $donnees = $request->fetch(PDO::FETCH_ASSOC);
+    $donnees = $requete->fetch(PDO::FETCH_ASSOC);
 
     return new Comedien($donnees);
 
@@ -45,8 +45,8 @@ class comedien_gestion
 
 
     $requete = $this->_db->prepare('SELECT * FROM impro_comediens WHERE nom = ?');
-	$requete->execute(array($nom));
-    $donnees = $request->fetch(PDO::FETCH_ASSOC);
+	  $requete->execute(array($nom));
+    $donnees = $requete->fetch(PDO::FETCH_ASSOC);
 
     return new Comedien($donnees);
   }
