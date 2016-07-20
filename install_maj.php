@@ -33,14 +33,11 @@ foreach ($donnees as $row) {
 	{
 		$sql = "INSERT INTO impro_spectacle (date, categorie, description, lieu, tarif, places) VALUES ('".$date->format("Y-m-d H:i:s")."',".$bdd->quote($row['categorie']).",".$bdd->quote($row['commentaire']).",".$row['lieu'].",".$bdd->quote($row['tarif']).",".$row['places'].")";
 		$requete = $bdd->query($sql);
-//		$id = $bdd->lastInsertId();
-		echo $sql."-- <br>";
 
 		$sql2 = "SELECT id FROM impro_spectacle WHERE date = '".$date->format("Y-m-d H:i:s")."'";
 		$requete2 = $bdd->query($sql2);
 		$ligne = $requete2->fetch(PDO::FETCH_ASSOC);
 		$id = $ligne[id];
-		echo $id." - ".$sql2."<br>";
 
 		// Attribution des rôles
 		if ($row['joueurs'] <> ';;;;;;' && $row['joueurs'] <>'')
@@ -55,43 +52,43 @@ foreach ($donnees as $row) {
 		if (isset($row['coach']))
 		{
 			$requete = $bdd->prepare("INSERT INTO impro_spectacle_role VALUES (?,?,?)");
-			$requete->execute(array($id,ROLE_COACH,$idJoueur));		
+			$requete->execute(array($id,ROLE_COACH,$row['coach']));		
 		}
 
 		if (isset($row['mc']))
 		{
 			$requete = $bdd->prepare("INSERT INTO impro_spectacle_role VALUES (?,?,?)");
-			$requete->execute(array($id,ROLE_MC,$idJoueur));		
+			$requete->execute(array($id,ROLE_MC,$row['mc']));		
 		}
 
 		if (isset($row['arbitre']))
 		{
 			$requete = $bdd->prepare("INSERT INTO impro_spectacle_role VALUES (?,?,?)");
-			$requete->execute(array($id,ROLE_ARBITRE,$idJoueur));		
+			$requete->execute(array($id,ROLE_ARBITRE,$row['arbitre']));		
 		}
 
 		if (isset($row['regisseur']))
 		{
 			$requete = $bdd->prepare("INSERT INTO impro_spectacle_role VALUES (?,?,?)");
-			$requete->execute(array($id,ROLE_REGISSEUR,$idJoueur));		
+			$requete->execute(array($id,ROLE_REGISSEUR,$row['regisseur']));		
 		}
 
 		if (isset($row['caisse']))
 		{
 			$requete = $bdd->prepare("INSERT INTO impro_spectacle_role VALUES (?,?,?)");
-			$requete->execute(array($id,ROLE_CAISSE,$idJoueur));		
+			$requete->execute(array($id,ROLE_CAISSE,$row['caisse']));		
 		}
 
 		if (isset($row['catering']))
 		{
 			$requete = $bdd->prepare("INSERT INTO impro_spectacle_role VALUES (?,?,?)");
-			$requete->execute(array($id,ROLE_CATERING,$idJoueur));		
+			$requete->execute(array($id,ROLE_CATERING,$row['catering']));		
 		}
 
 		if (isset($row['regisseur']))
 		{
 			$requete = $bdd->prepare("INSERT INTO impro_spectacle_role VALUES (?,?,?)");
-			$requete->execute(array($id,ROLE_OVS,$idJoueur));		
+			$requete->execute(array($id,ROLE_OVS,$row['regisseur']));		
 		}
 	}
 }

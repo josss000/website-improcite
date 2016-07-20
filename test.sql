@@ -1,6 +1,6 @@
 DROP TABLE IF EXISTS `impro_spectacle_role`;
-CREATE TABLE `improcite`.`impro_spectacle_role` ( `spectacle` INT NOT NULL ,  `role` varchar(30) NOT NULL , `joueur` INT NOT NULL ) ENGINE = InnoDB;
-ALTER TABLE `impro_spectacle_role` ADD PRIMARY KEY( `spectacle`, `role`, `joueur`);
+CREATE TABLE `improcite`.`impro_spectacle_role` ( `spectacle` INT NOT NULL ,  `role` varchar(30) NOT NULL , `comedien` INT NOT NULL ) ENGINE = InnoDB;
+ALTER TABLE `impro_spectacle_role` ADD PRIMARY KEY( `spectacle`, `role`, `comedien`);
 
 DROP TABLE IF EXISTS `impro_spectacle`;
 CREATE TABLE `impro_spectacle` (
@@ -25,3 +25,8 @@ CREATE TABLE `impro_training` (
   `intervenant` tinyint(4) NOT NULL DEFAULT '0',
   `cr` mediumtext COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+DROP VIEW IF EXISTS impro_v_stat_role;
+CREATE VIEW impro_v_stat_role
+AS
+SELECT impro_spectacle.id, impro_spectacle.date, impro_spectacle_role.role, impro_spectacle_role.comedien FROM impro_spectacle JOIN impro_spectacle_role ON impro_spectacle_role.spectacle = impro_spectacle.id;

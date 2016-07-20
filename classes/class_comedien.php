@@ -47,6 +47,8 @@ class comedien
 	  }
 	}
 
+
+
 	// getters
 	public function getId () { return $this->_id; }
 	public function getLogin () { return $this->_login; }

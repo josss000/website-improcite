@@ -14,6 +14,7 @@ const ROLE_OVS = 4;
 const ROLE_CAISSE = 5;
 const ROLE_REGISSEUR = 6;
 const ROLE_COACH = 7;
+// Note : en cas de modif, à modifier aussi dans la classe comédien gestion
 
 // Permet d'auto-charger la définition des classes
 // https://openclassrooms.com/courses/programmez-en-oriente-objet-en-php/utiliser-la-classe

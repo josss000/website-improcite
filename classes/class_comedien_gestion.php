@@ -4,6 +4,15 @@ class comedien_gestion
 {
   private $_db;
 
+  const ROLE_JOUEUR = 0;
+  const ROLE_MC = 1;
+  const ROLE_ARBITRE = 2;
+  const ROLE_CATERING = 3;
+  const ROLE_OVS = 4;
+  const ROLE_CAISSE = 5;
+  const ROLE_REGISSEUR = 6;
+  const ROLE_COACH = 7;
+
   public function __construct($db)
   {
     $this->setDb($db);
@@ -65,6 +74,19 @@ class comedien_gestion
   	else
   		return false;
     }
+
+  public function getStatJoueur($comedien, $role)
+  {
+    $requete = $this->_db->query("SELECT valeur FROM `impro_params` WHERE nom='debut_saison'");
+    $param = $requete->fetch(PDO::FETCH_ASSOC);
+
+    $debut_saison = new Datetime($param['valeur']);
+
+    $stat_sql = $this->_db->prepare("SELECT COUNT(*) AS 'valeur' FROM impro_v_stat_role WHERE role = ? AND comedien = ? AND date > ?");
+    $stat_sql->execute(array($role, $comedien->getId(), $debut_saison->format("Y-m-d H:i:s")));
+
+    return $stat_sql->fetchColumn();
+  }
 
   public function getList()
   {

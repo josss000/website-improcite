@@ -26,17 +26,8 @@ $comedien = $manager->getComedienById($user_id);
                   echo "</h4>\n</div>\n";
                   echo "<p class='description text-center'>";
                   echo $comedien->getPhraseImpro();
+                  $manager->getStatJoueur($comedien,ROLE_JOUEUR)
 
-                  echo getParam($bdd,'saison_en_cours');
-
-
-                  //TODO : en faire une methode
-
-
-REQUETE KO : mauvaise jointure
-                  $requete_stats = "SELECT * FROM impro_evenements AS 'evt' JOIN impro_evenements_joueurs AS 'lien' ON 'lien'.joueur = 'evt'.joueur WHERE joueur = ".$comedien->getId()." AND date>'".(2004 + getParam($bdd,'saison_en_cours'))."0901000000'";
-
-                  echo $requete_stats;
 ?>        
 
 
@@ -46,13 +37,13 @@ REQUETE KO : mauvaise jointure
             <div class="text-center">
                 <div class="row">
                     <div class="col-md-3 col-md-offset-1">
-                        <h5>12<br /><small>Files</small></h5>
+<?php               echo "<h5><small>Joueur</small><br />".$manager->getStatJoueur($comedien,ROLE_JOUEUR)."</h5>\n";  ?>
                     </div>
                     <div class="col-md-4">
-                        <h5>2GB<br /><small>Used</small></h5>
+<?php               echo "<h5><small>MC</small><br />".$manager->getStatJoueur($comedien,ROLE_MC)."</h5>\n";  ?>
                     </div>
                     <div class="col-md-3">
-                        <h5>24,6$<br /><small>Spent</small></h5>
+<?php               echo "<h5><small>Régie</small><br />".$manager->getStatJoueur($comedien,ROLE_REGISSEUR)."</h5>\n";  ?>
                     </div>
                 </div>
             </div>
@@ -126,25 +117,32 @@ REQUETE KO : mauvaise jointure
             <div class="header">
                 <h4 class="title">Edit Profile</h4>
             </div>
+
             <div class="content">
                 <form>
                     <div class="row">
-                        <div class="col-md-5">
+                        <div class="col-md-3">
                             <div class="form-group">
-                                <label>Company</label>
-                                <input type="text" class="form-control border-input" disabled placeholder="Company" value="Creative Code Inc.">
+                                <label>Prénom</label>
+                                <input type="text" class="form-control border-input" placeholder="Prénom" value=
+								<?php echo $comedien->getPrenom(); ?>
+                                >
                             </div>
                         </div>
                         <div class="col-md-3">
                             <div class="form-group">
-                                <label>Username</label>
-                                <input type="text" class="form-control border-input" placeholder="Username" value="michael23">
+                                <label>Nom</label>
+                                <input type="text" class="form-control border-input" placeholder="Nom" value=
+								<?php echo $comedien->getNom(); ?>
+                                >
                             </div>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Email address</label>
-                                <input type="email" class="form-control border-input" placeholder="Email">
+                                <label for="exampleInputEmail1">Date de naissance</label>
+                                <input type="email" class="form-control border-input" placeholder="Date de naissance"
+								<?php echo $comedien->getDateDeNaissance(); ?>
+                                >
                             </div>
                         </div>
                     </div>
@@ -152,14 +150,18 @@ REQUETE KO : mauvaise jointure
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label>First Name</label>
-                                <input type="text" class="form-control border-input" placeholder="Company" value="Chet">
+                                <label>Email</label>
+                                <input type="text" class="form-control border-input" placeholder="E-mail" value=
+								<?php echo $comedien->getEmail(); ?>
+                                >
                             </div>
                         </div>
-                        <div class="col-md-6">
+                         <div class="col-md-3">
                             <div class="form-group">
-                                <label>Last Name</label>
-                                <input type="text" class="form-control border-input" placeholder="Last Name" value="Faker">
+                                <label>Téléphone portable</label>
+                                <input type="text" class="form-control border-input" placeholder="Téléphone portable" value=
+								<?php echo $comedien->getNom(); ?>
+                                >
                             </div>
                         </div>
                     </div>
@@ -167,8 +169,10 @@ REQUETE KO : mauvaise jointure
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label>Address</label>
-                                <input type="text" class="form-control border-input" placeholder="Home Address" value="Melbourne, Australia">
+                                <label>Adresse</label>
+                                <input type="text" class="form-control border-input" placeholder="Adresse" value=
+								<?php echo $comedien->getAdresse(); ?>
+                                >
                             </div>
                         </div>
                     </div>

@@ -28,8 +28,8 @@ CREATE TABLE `impro_params` (
 ALTER TABLE `impro_params`
   ADD UNIQUE KEY `nom` (`nom`);
 
-CREATE TABLE `improcite`.`impro_spectacle_role` ( `spectacle` INT NOT NULL ,  `role` varchar(30) NOT NULL , `joueur` INT NOT NULL ) ENGINE = InnoDB;
-ALTER TABLE `impro_spectacle_role` ADD PRIMARY KEY( `spectacle`, `role`, `joueur`);
+CREATE TABLE `improcite`.`impro_spectacle_role` ( `spectacle` INT NOT NULL ,  `role` varchar(30) NOT NULL , `comedien` INT NOT NULL ) ENGINE = InnoDB;
+ALTER TABLE `impro_spectacle_role` ADD PRIMARY KEY( `spectacle`, `role`, `comedien`);
 
 CREATE TABLE `improcite`.`impro_entrainement` ( `spectacle` INT NOT NULL ,  `role` varchar(30) NOT NULL , `joueur` INT NOT NULL ) ENGINE = InnoDB;
 
@@ -57,13 +57,17 @@ CREATE TABLE `impro_training` (
   `cr` mediumtext COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
-/* TODO : drop colonne joueur dans impro_evenement
+CREATE VIEW impro_v_stat_role
+AS
+SELECT impro_spectacle.id, impro_spectacle.date, impro_spectacle_role.role, impro_spectacle_role.comedien FROM impro_spectacle JOIN impro_spectacle_role ON impro_spectacle_role.spectacle = impro_spectacle.id;
+
+/*
+ajouter table param avec contenu
 
 gérer liste intervenants : mail, tel, tarif, liste des interventions
 `+ respo training
 
 ajouter index sur spectacle role
-ajouter vue pour les stats
  */
 
 /* ?? A quoi servent afficherNom et notifEmail */
