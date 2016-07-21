@@ -5,37 +5,65 @@ require_once ("tete.php");
 ?>
 
 <div class="row">
-    <div class="col-md-4">
-		 <div class="widget">
-		    	<div class="row">
-		    		<div class="avatar-header">
-						<img class="avatar border-white" src="../img/profil/arnaud.jpg" alt="..."/>					
-					</div>
-					<div class="avatar-content">
-						<h4>Arnaud</h4>
-                        <hr>
-                        <div class="content">
-                                   		    	Contenu, blablabla
-                        </div>
-                        <hr>
-                        footer
-			    	</div>
-		    	</div>
-		 </div>
+<?php
+
+	for ($i;$i<10;$i++)
+{
+
+?>
+	<div class="memberlist">
+	    <div class="col-lg-4 col-md-6 col-sm-6">
+	    	<div class="cartouche">
+	    		<div class="row">
+		    		<div class="col-xs-4">
+			    		<div class="cartouche-avatar">
+			    		<img src="..\img\profil\josselin.jpg">
+			    		</div>
+	    			</div>
+	        		<div class="col-xs-8">
+		        		<div class="cartouche-titre">Josselin</div>
+			    		<div class="cartouche-info">
+							
+							telephone<br>
+							mail<br>
+							adresse
+							<hr>
+							icônes
+			    		</div>
+	    			</div> 		
+	    		</div>
+	    	</div>
+		</div>
 	</div>
-	<div class="col-md-4">
-		 <div class="widget">
-			ezr
-		 </div>
-	</div>
-	<div class="col-md-4">
-		 <div class="widget">
-		rez
-		 </div>
-	</div>
+<?php } ?>
+
 </div>
 
 <?php
+
+/*
+
+    <div class="col-xs-12 col-md-6 col-lg-4">
+		<div class="cartouche">
+		  <img src="../img/profil/josselin.jpg" alt="">
+		  <article>
+		    <b>Josselin</b>
+		    <br>
+				<i class="fa fa-mobile "></i> 06.35.40.01.48<br>
+				<i class="fa fa-envelope-o"></i> jossssss@gmail.com<br>
+				<i class="fa fa-home "></i> 64 Rue Boileau, 69 006 Lyon<br>
+		  </article>
+		  <nav>
+		    <ul>
+		      <li><i class="fa fa-envelope">7</i></li>
+		      <li><i class="fa fa-envelope">2</i></li>
+		      <li><i class="fa fa-envelope">9</i></li>
+		    </ul>
+		  </nav>
+		</div>
+	</div>
+
+*/
 /*
 <div class="row">
     <div class="col-md-4">
