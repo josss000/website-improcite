@@ -21,8 +21,20 @@
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  margin-right: 5px;
+  margin: 15px 0 -5px 15px;
   border: 5px solid #bdc3c7;
+}
+
+.cartouche-edit
+{
+  text-align: center;
+  margin: 0px -30px 0px 0px;
+}
+
+.cartouche-icones
+{
+  text-align: right;
+  margin: 0 15px 10px 0;
 }
 
 .cartouche
@@ -47,12 +59,17 @@
 {
   font-size: 1rem;  
   font-weight: bold;
-  padding: 5px 0;
+  padding: 10px 0;
 }
 
 .cartouche-info
 {
-  background-color:#f1c40f;
+  font-size: 0.8rem;
+}
+
+.cartouche-info p
+{
+  margin-bottom: 5px;
   font-size: 0.8rem;
 }
 
@@ -64,6 +81,20 @@
 [class*="col"] { 
   margin:0;
   padding:10;
+}
+
+.cartouche ul
+{
+margin: 0;
+padding: 0;
+list-style-type: none;
+}
+
+.cartouche ul li { display: inline; }
+
+.right
+{
+  right:0;
 }
 
 /* *** */

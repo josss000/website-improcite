@@ -23,14 +23,26 @@ require_once ("tete.php");
 	        		<div class="col-xs-8">
 		        		<div class="cartouche-titre">Josselin</div>
 			    		<div class="cartouche-info">
-							
-							telephone<br>
-							mail<br>
-							adresse
-							<hr>
-							icônes
-			    		</div>
+			    			<p><i class="fa fa-mobile "></i> 06.35.40.01.48</p>
+				        	<p><i class="fa fa-envelope-o"></i> jossssss@gmail.com</p>
+							<p><i class="fa fa-home "></i> 64 Rue Boileau, 69 006 Lyon</p>
+						</div>
 	    			</div> 		
+	    		</div>
+		    		<hr>
+	    		<div class="row">
+		    		<div class="col-xs-4">
+		    			<div class="cartouche-edit"><a href="membre.php?edit=1&id=2"><i class="fa fa-pencil-square-o"></i></a></div>
+		    		</div>
+	        		<div class="col-xs-8">
+	        			<div class="cartouche-icones">
+	        				<ul>
+								<li><i class="fa fa-user"></i> 7</li>
+								<li><i class="fa fa-black-tie"></i> 2</li>
+								<li><i class="fa fa-sliders"></i> 7</li>
+							</ul>
+						</div>
+	        		</div>
 	    		</div>
 	    	</div>
 		</div>
