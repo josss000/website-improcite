@@ -15,109 +15,54 @@
   width: calc(100% - 220px);
   }
 
-/* Liste membres */
-.cartouche img
-{
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  margin: 15px 0 -5px 15px;
-  border: 5px solid #bdc3c7;
-}
-
-.cartouche-edit
-{
-  text-align: center;
-  margin: 0px -30px 0px 0px;
-}
-
-.cartouche-icones
-{
-  text-align: right;
-  margin: 0 15px 10px 0;
-}
-
-.cartouche
-{
-/*  width: 350px;*/
-  border-radius: 6px;
-  box-shadow: 0 2px 2px rgba(204, 197, 185, 0.5);
-  background-color: #FFFFFF;
-  color: #252422;
-  margin-bottom: 20px;
-  position: relative;
-  z-index: 1;
-}
-
-.cartouche-avatar
-{
-  padding:10px;
-  height:100%;
-}
-
-.cartouche-titre
-{
-  font-size: 1rem;  
-  font-weight: bold;
-  padding: 10px 0;
-}
-
-.cartouche-info
-{
-  font-size: 0.8rem;
-}
-
-.cartouche-info p
-{
-  margin-bottom: 5px;
-  font-size: 0.8rem;
-}
-
-.cartouche hr
-{
-  margin: 10px;
-}
-
-[class*="col"] { 
-  margin:0;
-  padding:10;
-}
-
-.cartouche ul
-{
-margin: 0;
-padding: 0;
-list-style-type: none;
-}
-
-.cartouche ul li { display: inline; }
-
-.right
-{
-  right:0;
-}
-
-/* *** */
-/* le reste */
-
-/*
-.cartouche {
-  width: 200px;
+.card-userlist .image {
+  border-radius: 8px 8px 0 0;
   height: 100px;
-  background: #fff;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 0 0 10px #ddd;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  transform-style: preserve-3d;
+}
+
+.card-userlist .image {
+  border-radius: 8px 8px 0 0;
+  height: 150px;
+  position: relative;
   overflow: hidden;
 }
+.card-userlist .image img {
+  width: 100%;
+}
 
-.cartouche img {
-  float: left;
+.card-userlist .avatar {
   width: 100px;
   height: 100px;
-  border-right: 1px solid #eee;
+  border-radius: 50%;
+  position: relative;
+  margin-bottom: 15px;
 }
-*/
+.card-userlist .avatar.border-white {
+  border: 5px solid #FFFFFF;
+}
+
+.card-userlist .author {
+  text-align: center;
+  text-transform: none;
+  margin-top: -130px;
+}
+.card-userlist .author .title {
+  color: #403D39;
+}
+.card-userlist .author .title small {
+  color: #ccc5b9;
+}
+
+.adresse
+{
+    line-height: 2.5ex;
+  height: 7.5ex; /* 2.5ex for each visible line */
+  overflow: hidden;
+}
 
 
 

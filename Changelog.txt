@@ -27,3 +27,5 @@ Ecran Login
 
 
 //TODO : changer les évènements avec la date + saison en cours = date début saison
+
+//TODO : changer le stockage de profileImage et gérer profileImageAlt. Pour l'instant c'est dans la fonction hydrate

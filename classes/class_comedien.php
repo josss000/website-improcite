@@ -24,6 +24,8 @@ class comedien
 	private $_afficherNom;
 	private $_droits;
 	private $_notifEmail;
+	private $_profileImage;
+	private $_profileImageAlt;
 
 	public function __construct($donnees)
 	{
@@ -45,6 +47,8 @@ class comedien
 	      $this->$method($value);
 	    }
 	  }
+
+	  $this->setProfileImage("..\img\profil\\".$this->getLogin().".jpg");
 	}
 
 
@@ -72,6 +76,8 @@ class comedien
 	public function getAfficherNom () { return $this->_affichernom; }
 	public function getDroits () { return $this->_droits; }
 	public function getNotifEmail () { return $this->_notif_email; }
+	public function getProfileImage () { return $this->_profileImage; }
+	public function getProfileImageAlt () { return $this->_profileImageAlt; }
 
 	// setters
 
@@ -97,5 +103,7 @@ class comedien
 	public function setAfficherNom ($affichernom) { $this->_affichernom = $affichernom; }
 	public function setDroits ($droits) { $this->_droits = $droits; }
 	public function setNotifEmail ($notif_email) { $this->_notif_email = $notif_email; }
+	public function setProfileImage ($profileImage) { $this->_profileImage = $profileImage; }
+	public function setProfileImageAlt ($profileImageAlt) { $this->_profileImageAlt = $profileImageAlt; }
 }
 ?>

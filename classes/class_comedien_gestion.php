@@ -73,7 +73,23 @@ class comedien_gestion
   	}
   	else
   		return false;
+   }
+
+  public function getListComediens()
+  {
+    // Exécute une requête de type SELECT avec une clause WHERE, et retourne un objet Comedien.
+    $requete = $this->_db->query("SELECT * FROM impro_comediens WHERE actif=true");
+    $donnees = $requete->fetchAll(PDO::FETCH_ASSOC);
+
+    $comediens = [];
+
+    foreach($donnees as $ligne)
+    {
+      array_push($comediens, new Comedien($ligne));
     }
+
+    return $comediens;
+  }
 
   public function getStatJoueur($comedien, $role)
   {
@@ -86,6 +102,59 @@ class comedien_gestion
     $stat_sql->execute(array($role, $comedien->getId(), $debut_saison->format("Y-m-d H:i:s")));
 
     return $stat_sql->fetchColumn();
+  }
+
+  public function afficheCartouche($comedien, $droits)
+  {
+
+    ?>
+          <div class="row">
+            <div class="col-xs-4">
+              <div class="cartouche-avatar">
+              <?php  echo "<img src='".$comedien->getProfileImage()."'>" ?>
+              </div>
+            </div>
+              <div class="col-xs-8">
+              <?php  echo "<div class='cartouche-titre'>".$comedien->getPrenom()."</div>"; ?>
+              <div class="cartouche-info">
+                  <div class="row">
+                    <div class="col-xs-2"><i class="fa fa-mobile"></i>
+                    </div>
+                    <div class="col-xs-10"><div class="cartouche-text"><?php  echo $comedien->getPortable(); ?></div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-2"><i class="fa fa-envelope-o"></i>
+                    </div>
+                    <div class="col-xs-10"><div class="cartouche-text"><?php  echo $comedien->getEmail(); ?></div>
+                    </div>
+                  </div>              
+                  <div class="row">
+                    <div class="col-xs-2">
+                      <i class="fa fa-home"></i>
+                    </div>
+                    <div class="col-xs-10 adresse"><div class="cartouche-text"><?php  echo $comedien->getAdresse(); ?></div>
+                    </div>
+                  </div>
+            </div>
+            </div>    
+          </div>
+            <hr>
+          <div class="row">
+            <div class="col-xs-4">
+              <?php echo "<div class='cartouche-edit'><a href='membre.php?edit=1&id=".$comedien->getId()."'><i class='fa fa-pencil-square-o'></i></a></div>"; ?>
+            </div>
+              <div class="col-xs-8">
+                <div class="cartouche-icones">
+                  <ul>
+                <li><i class="fa fa-user"></i> <?php echo $this->getStatJoueur($comedien,ROLE_JOUEUR) ?> </li>
+                <li><i class="fa fa-black-tie"></i> <?php echo $this->getStatJoueur($comedien,ROLE_MC) ?> </li>
+                <li><i class="fa fa-sliders"></i> <?php echo $this->getStatJoueur($comedien,ROLE_REGISSEUR) ?> </li>
+              </ul>
+            </div>
+              </div>
+          </div>
+  <?php
   }
 
   public function getList()

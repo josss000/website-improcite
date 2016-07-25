@@ -7,46 +7,38 @@ require_once ("tete.php");
 <div class="row">
 <?php
 
-	for ($i;$i<10;$i++)
-{
+	$manager = new comedien_gestion($bdd);
+	$comediens = $manager->getListComediens();
+
+	foreach ($comediens as $comedien)
+	{
+?>
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+
+<?php
+//			$manager->afficheCartouche($comedien,true)
 
 ?>
-	<div class="memberlist">
-	    <div class="col-lg-4 col-md-6 col-sm-6">
-	    	<div class="cartouche">
-	    		<div class="row">
-		    		<div class="col-xs-4">
-			    		<div class="cartouche-avatar">
-			    		<img src="..\img\profil\josselin.jpg">
-			    		</div>
-	    			</div>
-	        		<div class="col-xs-8">
-		        		<div class="cartouche-titre">Josselin</div>
-			    		<div class="cartouche-info">
-			    			<p><i class="fa fa-mobile "></i> 06.35.40.01.48</p>
-				        	<p><i class="fa fa-envelope-o"></i> jossssss@gmail.com</p>
-							<p><i class="fa fa-home "></i> 64 Rue Boileau, 69 006 Lyon</p>
-						</div>
-	    			</div> 		
-	    		</div>
-		    		<hr>
-	    		<div class="row">
-		    		<div class="col-xs-4">
-		    			<div class="cartouche-edit"><a href="membre.php?edit=1&id=2"><i class="fa fa-pencil-square-o"></i></a></div>
-		    		</div>
-	        		<div class="col-xs-8">
-	        			<div class="cartouche-icones">
-	        				<ul>
-								<li><i class="fa fa-user"></i> 7</li>
-								<li><i class="fa fa-black-tie"></i> 2</li>
-								<li><i class="fa fa-sliders"></i> 7</li>
-							</ul>
-						</div>
-	        		</div>
-	    		</div>
-	    	</div>
-		</div>
-	</div>
+        <div class="card card-userlist">
+            <div class="image">
+                <img src="../img/profil_background_widget.jpg" alt="..."/>
+            </div>
+            <div class="content">
+                <div class="author">
+<?php
+                  echo "<img class='avatar border-white' src='../img/profil/".$comedien->getLogin().".jpg' alt='".$comedien->getPrenom()."'/>\n";
+                  echo "<h4 class='title'>".$comedien->getPrenom()."<br />\n";
+                  echo "<a href='mailto:".$comedien->getEmail()."'><small>".$comedien->getEmail()."</small></a><br>\n";
+                  echo "<small>".$comedien->getPortable()."</small></h4></div>\n";
+                  echo "<hr>";
+                  echo "<div class='adresse'><small>".$comedien->getAdresse()."</small>\n";
+                  echo "\n</div>\n";
+
+?>        
+            </div>
+        </div>
+    </div>
+
 <?php } ?>
 
 </div>

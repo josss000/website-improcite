@@ -26,8 +26,6 @@ $comedien = $manager->getComedienById($user_id);
                   echo "</h4>\n</div>\n";
                   echo "<p class='description text-center'>";
                   echo $comedien->getPhraseImpro();
-                  $manager->getStatJoueur($comedien,ROLE_JOUEUR)
-
 ?>        
 
 
